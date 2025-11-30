@@ -16,7 +16,7 @@ This project simulates a real-world ecommerce analytics pipeline and is designed
 
 ## 🧱 Lakehouse Architecture Diagram
 
-```mermaid
+
 flowchart TD
 
 A[Raw Layer - CSV] --> B[Bronze Layer - Parquet]
