@@ -1,0 +1,33 @@
+version: 2
+
+semantic_models:
+  - name: orders_semantic
+    model: ref('fact_orders')
+    entities:
+      - name: order
+        type: primary
+        expr: order_id
+      - name: customer
+        type: foreign
+        expr: customer_id
+    measures:
+      - name: total_revenue
+        agg: sum
+        expr: total_price
+
+      - name: orders_count
+        agg: count
+        expr: order_id
+
+      - name: unique_customers
+        agg: count_distinct
+        expr: customer_id
+
+      - name: average_order_value
+        agg: average
+        expr: total_price
+
+    dimensions:
+      - name: order_date
+        type: time
+        expr: order_date

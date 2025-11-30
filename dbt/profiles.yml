@@ -1,0 +1,9 @@
+ecommerce_local:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../data/ecommerce.duckdb
+      threads: 1
+      extensions:
+        - parquet
